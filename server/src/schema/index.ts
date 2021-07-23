@@ -1,8 +1,12 @@
 import { GraphQLObjectType, GraphQLSchema } from "graphql";
+import { GET_BOOK, GET_BOOKS } from "./Queries/book";
 
 const RootQuery = new GraphQLObjectType({
   name: "RootQuery",
-  fields: {},
+  fields: {
+    getBooks: GET_BOOKS,
+    getBook: GET_BOOK,
+  },
 });
 
 const Mutations = new GraphQLObjectType({
@@ -11,7 +15,7 @@ const Mutations = new GraphQLObjectType({
 });
 const schema = new GraphQLSchema({
   query: RootQuery,
-  mutation: Mutations,
+  // mutation: Mutations,
 });
 
 export default schema;
