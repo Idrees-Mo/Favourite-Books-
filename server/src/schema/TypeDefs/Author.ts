@@ -1,11 +1,26 @@
-import { GraphQLID, GraphQLObjectType, GraphQLString } from "graphql";
+import {
+  GraphQLID,
+  GraphQLList,
+  GraphQLObjectType,
+  GraphQLString,
+} from "graphql";
+import { BookType } from "./Book";
 
-export const Author = new GraphQLObjectType({
+// hardcoded test data
+import { data } from "../../data";
+const { books } = data;
+
+export const AuthorType: any = new GraphQLObjectType({
   name: "Author",
   description: "Author Type",
   fields: () => ({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     photo_url: { type: GraphQLString },
+    books: {
+      type: GraphQLList(BookType),
+      resolve: (parent, args) =>
+        books.filter((book) => book.authId == parent.id),
+    },
   }),
 });
