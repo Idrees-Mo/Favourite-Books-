@@ -18,7 +18,7 @@ export const AuthorType: any = new GraphQLObjectType({
       type: GraphQLList(BookType),
       resolve: async (parent, args) => {
         try {
-          let books = Book.where({ authId: parent.id });
+          let books = await Book.where({ authId: parent.id });
           return books;
         } catch (err) {
           console.log(err.message);
