@@ -1,21 +1,28 @@
 import { GraphQLID, GraphQLList } from "graphql";
 import { AuthorType } from "../TypeDefs/Author";
-import { data } from "../../data";
-
-const { authors } = data;
+import Author from "../../models/Author";
 
 export const GET_AUTHOR = {
   type: AuthorType,
   args: { id: { type: GraphQLID } },
-  resolve: (parent: any, args: any) =>
-    authors.find((a: any) => a.id == args.id),
-  // @todo - get author from mongoDB
+  resolve: async (parent: any, args: any) => {
+    try {
+      let author = await Author.findById(args.id);
+      return author;
+    } catch (err) {
+      console.log(err.message);
+    }
+  },
 };
 
 export const GET_AUTHORS = {
   type: GraphQLList(AuthorType),
-  resolve() {
-    return authors;
-    // @todo - get authors from mongoDB
+  resolve: async () => {
+    try {
+      let authors = await Author.find({});
+      return authors;
+    } catch (err) {
+      console.log(err.message);
+    }
   },
 };

@@ -4,11 +4,8 @@ import {
   GraphQLObjectType,
   GraphQLString,
 } from "graphql";
+import Book from "../../models/Book";
 import { BookType } from "./Book";
-
-// hardcoded test data
-import { data } from "../../data";
-const { books } = data;
 
 export const AuthorType: any = new GraphQLObjectType({
   name: "Author",
@@ -19,8 +16,14 @@ export const AuthorType: any = new GraphQLObjectType({
     photo_url: { type: GraphQLString },
     books: {
       type: GraphQLList(BookType),
-      resolve: (parent, args) =>
-        books.filter((book) => book.authId == parent.id),
+      resolve: async (parent, args) => {
+        try {
+          let books = Book.where({ authId: parent.id });
+          return books;
+        } catch (err) {
+          console.log(err.message);
+        }
+      },
     },
   }),
 });

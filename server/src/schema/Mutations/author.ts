@@ -1,4 +1,3 @@
-// create a new author
 import { GraphQLNonNull, GraphQLString } from "graphql";
 import { AuthorType } from "../TypeDefs/Author";
 import Author from "../../models/Author";

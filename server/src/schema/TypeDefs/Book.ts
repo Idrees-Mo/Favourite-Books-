@@ -1,8 +1,6 @@
 import { GraphQLID, GraphQLObjectType, GraphQLString } from "graphql";
+import Author from "../../models/Author";
 import { AuthorType } from "./Author";
-
-import { data } from "../../data";
-const { authors } = data;
 
 export const BookType = new GraphQLObjectType({
   name: "Book",
@@ -14,8 +12,14 @@ export const BookType = new GraphQLObjectType({
     authId: { type: GraphQLID },
     author: {
       type: AuthorType,
-      resolve: (parent, args) =>
-        authors.find((author) => author.id == parent.authId),
+      resolve: async (parent, args) => {
+        try {
+          const author = await Author.findById(parent.authId);
+          return author;
+        } catch (err) {
+          console.log(err.message);
+        }
+      },
     },
   }),
 });
