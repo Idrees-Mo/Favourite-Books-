@@ -1,4 +1,6 @@
 import { GraphQLObjectType, GraphQLSchema } from "graphql";
+import { CREATE_AUTHOR } from "./Mutations/author";
+import { CREATE_BOOK } from "./Mutations/book";
 import { GET_AUTHOR, GET_AUTHORS } from "./Queries/authors";
 import { GET_BOOK, GET_BOOKS } from "./Queries/book";
 
@@ -14,11 +16,14 @@ const RootQuery = new GraphQLObjectType({
 
 const Mutations = new GraphQLObjectType({
   name: "Mutations",
-  fields: {},
+  fields: {
+    createAuthor: CREATE_AUTHOR,
+    createBook: CREATE_BOOK,
+  },
 });
 const schema = new GraphQLSchema({
   query: RootQuery,
-  // mutation: Mutations,
+  mutation: Mutations,
 });
 
 export default schema;

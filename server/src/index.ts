@@ -1,10 +1,11 @@
 import express from "express";
+import conncetDB from "./config/db";
 import { graphqlHTTP } from "express-graphql";
 import schema from "./schema";
 const app = express();
 
 app.use(express.json());
-
+conncetDB();
 app.use(
   "/graphql",
   graphqlHTTP({
