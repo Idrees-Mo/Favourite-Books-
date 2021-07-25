@@ -1,11 +1,15 @@
 import express from "express";
 import conncetDB from "./config/db";
+import cors from "cors";
 import { graphqlHTTP } from "express-graphql";
 import schema from "./schema";
+
 const app = express();
+conncetDB();
+app.use(cors());
 
 app.use(express.json());
-conncetDB();
+
 app.use(
   "/graphql",
   graphqlHTTP({
