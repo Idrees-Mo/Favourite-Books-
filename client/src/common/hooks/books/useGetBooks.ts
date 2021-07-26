@@ -1,7 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import { Book } from "../../interfaces/book.interface";
 
-const GET_BOOKS = gql`
+export const GET_BOOKS = gql`
   query getBooks {
     getBooks {
       id
@@ -18,6 +18,6 @@ const GET_BOOKS = gql`
 export const useGetBooks = (): Book[] | undefined => {
   const { data } = useQuery(GET_BOOKS);
   if (data) {
-    return data;
+    return data.getBooks;
   }
 };
