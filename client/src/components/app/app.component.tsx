@@ -1,16 +1,19 @@
 import { ApolloProvider } from "@apollo/client";
 import React from "react";
 import client from "../../common/apolloClient";
-import BookForm from "../books/BookForm";
-import BooksList from "../books/BooksList";
+import BookForm from "../bookForm/BookForm";
+import BooksList from "../books/books.component";
+import { Main, Container } from "./app.style";
 
 const App: React.FC = () => {
   return (
     <ApolloProvider client={client}>
-      <div className="app">
-        <BookForm />
-        <BooksList />
-      </div>
+      <Main>
+        <Container>
+          <BookForm />
+          <BooksList />
+        </Container>
+      </Main>
     </ApolloProvider>
   );
 };
