@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "description": "\"It is a personal fullstack project with graphql & node on backend & react with redux on clientside\"",
   "main": "index.js",
+  "engines": {
+    "node": "v14.13.0"
+  },
   "scripts": {
     "watch": "tsc -w",
     "start": "node dist/index.js",
+    "postinstall": "tsc",
+    "watch-node": "nodemon dist/index.js",
+    "watch-ts": "tsc -w",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master",
     "dev": "nodemon src/index.ts",
-    "dev2": "nodemon dist/index.js",
-    "build": "tsc -p"
-  },
+    "dev2": "nodemon dist/index.js"
+      },
   "author": "\"Muhammad Idrees\"",
   "license": "ISC",
   "dependencies": {
