@@ -1,3 +1,4 @@
+require("dotenv").config();
 import express from "express";
 import conncetDB from "./config/db";
 import cors from "cors";
@@ -21,5 +22,5 @@ app.use("/", (req, res) => {
   res.send("Hello, it is a graphQLServer");
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Sever is running on port ${PORT}`));

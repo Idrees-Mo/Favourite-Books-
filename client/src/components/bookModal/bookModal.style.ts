@@ -54,7 +54,7 @@ export const CloseBtn = styled.button`
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: gray;
+  background-color: #555;
   color: #fff;
   font-weight: bold;
   text-align: center;
@@ -123,6 +123,5 @@ export const ListTitle = styled.p`
   font-weight: 500;
   display: inline;
   float: left;
-  color: #555;
-  background-color: rgba(0, 0, 0, 0.2);
+  color: #333;
 `;
