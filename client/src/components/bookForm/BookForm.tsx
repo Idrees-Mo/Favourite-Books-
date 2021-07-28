@@ -60,6 +60,7 @@ const BookForm: React.FC<IProps> = ({ show }) => {
     setName("");
     setPhotoUrl("");
     setAuthorForm(false);
+    show();
   };
   //Form for Add Author
   const AuthForm = (
