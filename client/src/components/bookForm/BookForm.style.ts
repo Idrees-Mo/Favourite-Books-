@@ -29,13 +29,25 @@ export const Form = styled.form`
     background-color: #52b69a;
     cursor: pointer;
     margin-left: 6px;
+    @media (max-width: 550px) {
+      width: 100%;
+      align-self: center;
+      margin-left: 0;
+    }
   }
   .BtnGroup {
     display: flex;
     align-self: flex-end;
+    @media (max-width: 550px) {
+      flex-direction: column-reverse;
+      align-self: center;
+    }
   }
   .cancel {
     background-color: #333;
+  }
+  @media (max-width: 650px) {
+    align-items: center;
   }
 `;
 

@@ -19,7 +19,7 @@ const Navbar: React.FC<IProps> = ({ showAddForm }) => {
       <Wrapper>
         <Header>My Favourite Books</Header>
         <BtnContainer onClick={() => showAddForm(true)}>
-          <BtnText> Add New Book</BtnText>
+          <BtnText> New Book</BtnText>
           <AddButton> + </AddButton>
         </BtnContainer>
       </Wrapper>

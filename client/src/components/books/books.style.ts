@@ -12,4 +12,8 @@ export const Container = styled.div`
     content: "";
     flex: auto;
   }
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;

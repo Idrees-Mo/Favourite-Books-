@@ -25,6 +25,15 @@ export const Container = styled.div`
   -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.75);
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: center;
+    min-width: 18rem;
+    width: fit-content;
+    width: 6rem;
+    height: 30rem;
+  }
 `;
 
 export const Cover = styled.div`
@@ -34,6 +43,10 @@ export const Cover = styled.div`
     width: 100%;
     height: 100%;
   }
+  @media (max-width: 550px) {
+    width: 100%;
+    height: 40%;
+  }
 `;
 
 export const Content = styled.div`
@@ -42,6 +55,10 @@ export const Content = styled.div`
   position: relative;
   text-align: center;
   background-color: #fff;
+  @media (max-width: 550px) {
+    width: 100%;
+    height: 60%;
+  }
 `;
 
 export const Title = styled.h3`
