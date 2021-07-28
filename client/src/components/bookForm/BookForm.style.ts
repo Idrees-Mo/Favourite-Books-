@@ -26,7 +26,7 @@ export const Form = styled.form`
     border: none;
     color: #fff;
     padding: 4px 12px;
-    background-color: green;
+    background-color: #52b69a;
     cursor: pointer;
     margin-left: 6px;
   }

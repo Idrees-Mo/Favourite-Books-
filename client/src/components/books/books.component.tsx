@@ -4,7 +4,7 @@ import { useGetBooks } from "../../common/hooks/books/useGetBooks";
 import { Book } from "../../common/interfaces/book.interface";
 import BookItem from "../book/Book.component";
 import Modal from "../bookModal/bookModal.component";
-import { Container, Header, Wraper } from "./books.style";
+import { Container, Wraper } from "./books.style";
 
 const BooksList: React.FC = () => {
   const books: Book[] | undefined = useGetBooks();
@@ -14,9 +14,6 @@ const BooksList: React.FC = () => {
   return (
     <Wraper>
       {showModal && <Modal book={selectedBook} modal={setShowModal} />}
-      <Header>
-        <h1>My Favourite Books</h1>
-      </Header>
       <Container>
         {books &&
           books.map((book) => (
