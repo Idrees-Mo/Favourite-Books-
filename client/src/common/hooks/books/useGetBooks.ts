@@ -10,6 +10,10 @@ export const GET_BOOKS = gql`
       author {
         name
         id
+        photo_url
+        books {
+          cover_url
+        }
       }
     }
   }

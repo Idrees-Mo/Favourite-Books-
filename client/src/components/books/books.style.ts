@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+export const Wraper = styled.div`
+  width: 100%;
+`;
 export const Header = styled.div`
   display: flex;
   align-items: center;
@@ -9,6 +12,9 @@ export const Header = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 100;
-  margin: auto;
+  justify-content: space-between;
+  ::after {
+    content: "";
+    flex: auto;
+  }
 `;

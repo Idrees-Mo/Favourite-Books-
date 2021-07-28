@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDeleteBook } from "../../common/hooks/books/useDeleteBook";
 import { useGetBooks } from "../../common/hooks/books/useGetBooks";
 import { Book } from "../../common/interfaces/book.interface";
 import BookItem from "../book/Book.component";
-import { Container, Header } from "./books.style";
+import Modal from "../bookModal/bookModal.component";
+import { Container, Header, Wraper } from "./books.style";
 
 const BooksList: React.FC = () => {
   const books: Book[] | undefined = useGetBooks();
-  const removeBook = useDeleteBook();
+  const [showModal, setShowModal] = useState(false);
+  const [selectedBook, setSelectedBook] = useState(null);
+
   return (
-    <>
+    <Wraper>
+      {showModal && <Modal book={selectedBook} modal={setShowModal} />}
       <Header>
         <h1>My Favourite Books</h1>
       </Header>
@@ -17,11 +21,16 @@ const BooksList: React.FC = () => {
         {books &&
           books.map((book) => (
             <div>
-              <BookItem key={book.id} book={book} />
+              <BookItem
+                key={book.id}
+                book={book}
+                modal={setShowModal}
+                selectBook={setSelectedBook}
+              />
             </div>
           ))}
       </Container>
-    </>
+    </Wraper>
   );
 };
 

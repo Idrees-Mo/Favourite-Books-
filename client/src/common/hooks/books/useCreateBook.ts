@@ -9,6 +9,7 @@ const CREATE_BOOK = gql`
       author {
         name
         id
+        photo_url
       }
     }
   }
