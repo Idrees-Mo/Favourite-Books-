@@ -19,9 +19,7 @@ export const GET_BOOKS = gql`
   }
 `;
 
-export const useGetBooks = (): Book[] | undefined => {
-  const { data } = useQuery(GET_BOOKS);
-  if (data) {
-    return data.getBooks;
-  }
+export const useGetBooks = () => {
+  const { data, loading, error } = useQuery(GET_BOOKS);
+  return { data, loading, error };
 };

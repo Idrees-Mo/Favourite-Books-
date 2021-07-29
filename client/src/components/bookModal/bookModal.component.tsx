@@ -41,7 +41,10 @@ const Modal: React.FC<IProps> = ({ book, modal }) => {
           <BookList>
             {book?.author?.books &&
               book?.author?.books.map((b) => (
-                <BookItem style={{ backgroundImage: `url(${b.cover_url})` }} />
+                <BookItem
+                  key={b.id}
+                  style={{ backgroundImage: `url(${b.cover_url})` }}
+                />
               ))}
             <BookItem />
           </BookList>
