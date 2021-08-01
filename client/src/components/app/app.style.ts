@@ -4,6 +4,7 @@ export const Container = styled.div`
   width: 70%;
   max-width: 65rem;
   height: 100%;
+  min-height: calc(100vh - 142px);
   margin: auto;
   margin-top: 1rem;
   padding: 1rem;

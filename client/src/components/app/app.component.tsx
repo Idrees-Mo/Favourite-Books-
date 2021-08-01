@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import client from "../../common/apolloClient";
 import BookForm from "../bookForm/BookForm";
 import BooksList from "../books/books.component";
+import Footer from "../footer/footer.component";
 import Navbar from "../navbar/navbar.component";
 import { Main, Container } from "./app.style";
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
           {showForm && <BookForm show={handle} />}
           <BooksList />
         </Container>
+        <Footer />
       </Main>
     </ApolloProvider>
   );

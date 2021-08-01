@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 3.8rem;
-  background-color: #8ecae6;
+  height: 70px;
+  background-color: #1d3557;
   color: #fff;
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
 
 export const Header = styled.div`
   font-size: 1.8rem;
-  color: #264653;
+  color: #fff;
   font-weight: bold;
   @media (max-width: 550px) {
     font-weight: normal;
