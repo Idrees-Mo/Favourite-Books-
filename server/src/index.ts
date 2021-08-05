@@ -18,6 +18,7 @@ app.use(
     graphiql: true,
   })
 );
+
 app.use("/", (req, res) => {
   res.send("Hello, it is a graphQLServer");
 });

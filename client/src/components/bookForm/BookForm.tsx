@@ -79,7 +79,7 @@ const BookForm: React.FC<IProps> = ({ show }) => {
         type="text"
         name="photo_url"
         value={photo_url}
-        placeholder="Book Cover URL"
+        placeholder="Author Photo URL"
         onChange={(e) => setPhotoUrl(e.target.value)}
       />
       <div className="BtnGroup">
